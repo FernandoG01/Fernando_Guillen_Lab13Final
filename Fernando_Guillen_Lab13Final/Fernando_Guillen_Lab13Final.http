@@ -1,0 +1,6 @@
+@Fernando_Guillen_Lab13Final_HostAddress = http://localhost:5190
+
+GET {{Fernando_Guillen_Lab13Final_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
