@@ -3,20 +3,20 @@ name: Build and Deploy .NET Application
 on:
   push:
     branches:
-      - main # Se ejecuta cuando subes cambios a la rama principal
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Check out code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
-    - name: Set up .NET
-      uses: actions/setup-dotnet@v1
+    - name: Set up .NET 9
+      uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '8.0'
+        dotnet-version: '9.0.x'
 
     - name: Restore dependencies
       run: dotnet restore
@@ -27,6 +27,6 @@ jobs:
     - name: Publish application
       run: dotnet publish --configuration Release --output ./published
 
-    - name: Deploy to server (ejemplo de despliegue)
-      run: |
-        scp -r ./published username@server:/path/to/deploy
+    # Este paso es opcional. No desplegará nada si no configuras un servidor real.
+    - name: Deploy to server (ejemplo)
+      run: echo "Deployment placeholder. No server configured."
