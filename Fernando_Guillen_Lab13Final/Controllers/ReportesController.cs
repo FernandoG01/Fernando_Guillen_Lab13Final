@@ -75,7 +75,7 @@ namespace Fernando_Guillen_Lab13Final.Controllers
 
             using var package = new ExcelPackage();
 
-            // Hoja Users
+          
             var wsUsers = package.Workbook.Worksheets.Add("Users");
             wsUsers.Cells[1, 1].Value = "UserId";
             wsUsers.Cells[1, 2].Value = "Username";
@@ -94,7 +94,7 @@ namespace Fernando_Guillen_Lab13Final.Controllers
                 row++;
             }
 
-            // Hoja Roles
+            
             var wsRoles = package.Workbook.Worksheets.Add("Roles");
             wsRoles.Cells[1, 1].Value = "RoleId";
             wsRoles.Cells[1, 2].Value = "RoleName";
@@ -108,7 +108,7 @@ namespace Fernando_Guillen_Lab13Final.Controllers
                 row++;
             }
 
-            // Hoja Tickets
+           
             var wsTickets = package.Workbook.Worksheets.Add("Tickets");
             wsTickets.Cells[1, 1].Value = "TicketId";
             wsTickets.Cells[1, 2].Value = "Title";

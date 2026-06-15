@@ -165,3 +165,4 @@ C:\Users\Usuario\RiderProjects\Fernando_Guillen_Lab13Final\Fernando_Guillen_Lab1
 C:\Users\Usuario\RiderProjects\Fernando_Guillen_Lab13Final\Fernando_Guillen_Lab13Final\obj\Release\net9.0\Fernando_Guillen_Lab13Final.pdb
 C:\Users\Usuario\RiderProjects\Fernando_Guillen_Lab13Final\Fernando_Guillen_Lab13Final\obj\Release\net9.0\Fernando_Guillen_Lab13Final.genruntimeconfig.cache
 C:\Users\Usuario\RiderProjects\Fernando_Guillen_Lab13Final\Fernando_Guillen_Lab13Final\obj\Release\net9.0\ref\Fernando_Guillen_Lab13Final.dll
+C:\Users\Usuario\RiderProjects\Fernando_Guillen_Lab13Final\Fernando_Guillen_Lab13Final\obj\Release\net9.0\Fernando_Guillen_Lab13Final.sourcelink.json
