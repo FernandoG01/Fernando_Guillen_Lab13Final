@@ -6,7 +6,9 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<LINQExampleDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection")
+    )
 );
 
 builder.Services.AddScoped<ExcelReportService>();
@@ -30,5 +32,16 @@ app.UseHttpsRedirection();
 app.MapControllers();
 
 app.MapGet("/", () => "API funcionando correctamente con SQL Server");
+
+// PRUEBA DE CONEXIÓN A AZURE SQL
+app.MapGet("/test-db", async (LINQExampleDbContext db) =>
+{
+    var totalUsuarios = await db.Users.CountAsync();
+
+    return Results.Ok(new
+    {
+        TotalUsuarios = totalUsuarios
+    });
+});
 
 app.Run();
