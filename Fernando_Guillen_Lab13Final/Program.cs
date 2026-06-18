@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<LINQExampleDbContext>(options =>
-    options.UseInMemoryDatabase("SistemaTicketsReportes")
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
 builder.Services.AddScoped<ExcelReportService>();
@@ -22,17 +22,13 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Swagger activo
 app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-
 app.MapControllers();
 
-// Endpoint base
-app.MapGet("/", () => "API Fernando Guillen Lab13 Final funcionando correctamente.");
+app.MapGet("/", () => "API funcionando correctamente con SQL Server");
 
 app.Run();
